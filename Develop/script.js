@@ -2,11 +2,33 @@
 let generateBtn = document.querySelector("#generate");
 // 1b. create array of letters
 let lcLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l"];
+let ucLetters = ["A", "B", "C", "D"];
+let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let characters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
 // generatePassword
 // return a final password as a string
 function generatePassword() {
-  // 1. assign a variable to the length of the password
-  let pwLength = prompt("how long has this been going on?");
+  let userInput = window.prompt(
+    `Please choose a password length. Enter it below.`
+  );
+
+  let minLength = 8;
+  let maxLength = 128;
+  {
+    if (userInput >= minLength && userInput <= maxLength) {
+      alert("Thank you!");
+      return true;
+    } else {
+      alert(
+        `Please input a number between ${minLength} and ${maxLength} characters to continue.`
+      );
+      return false;
+    }
+  }
+
+  //choose upper, lower, special, numbers
+
   let password = [];
   // 1a. create a password with that length
   // 1c. loop through array of letters
@@ -23,8 +45,8 @@ function generatePassword() {
 }
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
 // Add event listener to generate button
