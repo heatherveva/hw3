@@ -89,7 +89,9 @@ function generatePassword() {
   let password = [];
 
   let pwLength = parseInt(
-    prompt(`Please choose a password length. Enter it below.`)
+    prompt(
+      `Please choose a password length between 8 and 128 characters. Enter it below.`
+    )
   );
 
   let minLength = 8;
@@ -97,11 +99,10 @@ function generatePassword() {
 
   if (pwLength >= minLength && pwLength <= maxLength) {
     alert("Thank you!");
-  } else {
-    alert(
-      `Please input a number between ${minLength} and ${maxLength} characters to continue.`
-    );
+  } else if (pwLength < minLength || pwLength > maxLength) {
+    return "null";
   }
+
   let hasLcLetters = window.confirm(
     "Would you like your password to contain lowercase letters?"
   );
@@ -124,24 +125,32 @@ function generatePassword() {
     possibleLetters = possibleLetters.concat(lcLetters);
     password.push(generateRandom(lcLetters));
     pwLength--;
+  } else if (hasLcLetters === false) {
+    possibleLetters = possibleLetters.concat(!lcLetters);
   }
 
   if (hasUcLetters === true) {
     possibleLetters = possibleLetters.concat(ucLetters);
     password.push(generateRandom(ucLetters));
     pwLength--;
+  } else if (hasUcLetters === false) {
+    possibleLetters = possibleLetters.concat(!ucLetters);
   }
 
   if (hasNumbers === true) {
     possibleLetters = possibleLetters.concat(numbers);
     password.push(generateRandom(numbers));
     pwLength--;
+  } else if (hasNumbers === false) {
+    possibleLetters = possibleLetters.concat(!numbers);
   }
 
   if (hasSpecialCharacters === true) {
     possibleLetters = possibleLetters.concat(specialCharacters);
     password.push(generateRandom(specialCharacters));
     pwLength--;
+  } else if (hasSpecialCharacters === false) {
+    possibleLetters = possibleLetters.concat(!specialCharacters);
   }
 
   // 1d. push each letter array into password array

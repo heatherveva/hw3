@@ -15,3 +15,6 @@ An example of a generated password can be seen below:
 ![The picture below contains a white background with the title "Password Generator" in grey text. There is a red "Generate Password" button and place for the generated password to be displayed.] (./assets/password.png)
 
 ## Links to Application
+
+- Here is a link to the repository: https://github.com/heatherveva/hw3.git
+- Here is the page: https://heatherveva.github.io/hw3/
