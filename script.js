@@ -125,32 +125,24 @@ function generatePassword() {
     possibleLetters = possibleLetters.concat(lcLetters);
     password.push(generateRandom(lcLetters));
     pwLength--;
-  } else if (hasLcLetters === false) {
-    possibleLetters = possibleLetters.concat(!lcLetters);
   }
 
   if (hasUcLetters === true) {
     possibleLetters = possibleLetters.concat(ucLetters);
     password.push(generateRandom(ucLetters));
     pwLength--;
-  } else if (hasUcLetters === false) {
-    possibleLetters = possibleLetters.concat(!ucLetters);
   }
 
   if (hasNumbers === true) {
     possibleLetters = possibleLetters.concat(numbers);
     password.push(generateRandom(numbers));
     pwLength--;
-  } else if (hasNumbers === false) {
-    possibleLetters = possibleLetters.concat(!numbers);
   }
 
   if (hasSpecialCharacters === true) {
     possibleLetters = possibleLetters.concat(specialCharacters);
     password.push(generateRandom(specialCharacters));
     pwLength--;
-  } else if (hasSpecialCharacters === false) {
-    possibleLetters = possibleLetters.concat(!specialCharacters);
   }
 
   // 1d. push each letter array into password array
@@ -160,9 +152,9 @@ function generatePassword() {
   // 1e. convert password array back to string
   return password.join("");
 }
-function generateRandom(characters) {
-  let index = Math.floor(Math.random() * characters.length);
-  return characters[index];
+function generateRandom(possibleLetters) {
+  let index = Math.floor(Math.random() * possibleLetters.length);
+  return possibleLetters[index];
 }
 // Write password to the #password input
 function writePassword() {
