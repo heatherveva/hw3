@@ -12,7 +12,7 @@ Once the user makes their choices, a password, matching the user's entered crite
 
 An example of a generated password can be seen below:
 
-![This image depicts the password generator after a user has followed all prompts and generated a random passowrd. The image is a white background, a title "Password Generator", a grey box for the password, and a red "Generate Password" button.](./Develop.assets.password.png)
+![This image depicts the password generator after a user has followed all prompts and generated a random passowrd. The image is a white background, a title "Password Generator", a grey box for the password, and a red "Generate Password" button.](./assets.password.png)
 
 ## Links to Application
 

@@ -145,9 +145,10 @@ function generatePassword() {
     pwLength--;
   }
 
-  // 1d. push each letter array into password array
   for (i = 0; i < pwLength; i++) {
-    password.push(generateRandom(possibleLetters));
+    password.push(
+      possibleLetters[Math.floor(Math.random() * possibleLetters.length)]
+    );
   }
   // 1e. convert password array back to string
   return password.join("");
